@@ -158,6 +158,7 @@ export interface ForceGraphGenericInstance<ChainableInstance> {
   cooldownTime(milliseconds: number): ChainableInstance;
   onEngineTick(callback: () => void): ChainableInstance;
   onEngineStop(callback: () => void): ChainableInstance;
+  onRendered(callback?: () => void): ChainableInstance;
 
   // Interaction
   onNodeClick(callback: (node: NodeObject, event: MouseEvent) => void): ChainableInstance;

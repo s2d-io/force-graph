@@ -182,6 +182,7 @@ export default Kapsule({
     onZoomEnd: { triggerUpdate: false },
     onRenderFramePre: { triggerUpdate: false },
     onRenderFramePost: { triggerUpdate: false },
+    onRendered: { default: () => {}, triggerUpdate: false},
     ...linkedProps
   },
 
@@ -487,6 +488,7 @@ export default Kapsule({
           );
           state.needsRedraw = true;
         }
+        state.onRendered()
       });
 
     // Setup tooltip
